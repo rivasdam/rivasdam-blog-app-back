@@ -1,9 +1,10 @@
 const fetch = require("node-fetch");
-const url = require('url');
+const pjson = require('./package.json');
 
 exports.fetchFlights = async (req, res) => {
     try {
 
+        let appVersion = pjson.version;
         // PARA PASAR PARAMETROS POR URL
         // let  fromValue = req.query.from; 
         // let  toValue = req.query.to; 
@@ -33,11 +34,11 @@ exports.fetchFlights = async (req, res) => {
             let flights = (resData).length;
 
             if (flights == 0) {
-                res.send('No flights available in the selected date! - Current Time: ' + newDate.toLocaleTimeString());
+                res.send('No flights available in the selected date! - Current Time: ' + newDate.toLocaleTimeString() + '. Current App Version: '+appVersion);
             } else if (flights == 1) {
-                res.send('There is ' + flights + ' flight available in the selected date! - Current Time: ' + newDate.toLocaleTimeString());
+                res.send('There is ' + flights + ' flight available in the selected date! - Current Time: ' + newDate.toLocaleTimeString() + '. Current App Version: '+appVersion);
             } else {
-                res.send('There are ' + flights + ' flights available in the selected date! - Current Time: ' + newDate.toLocaleTimeString());
+                res.send('There are ' + flights + ' flights available in the selected date! - Current Time: ' + newDate.toLocaleTimeString() + '. Current App Version: '+appVersion);
             }
 
         } else {

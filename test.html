@@ -21,7 +21,7 @@
 
 
             for (i = 0; i <= 10; i++) {
-                fetch('http://localhost:3000/getflights')
+                fetch('http://octank-alb-2098932746.us-east-1.elb.amazonaws.com/getflights')
                     .then(res => { return res.text() })
                     .then(data => {
                         html += data + "<br />";
