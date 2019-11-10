@@ -1,6 +1,6 @@
 {
   "name": "octank-backend-services",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Backend Services for Octank",
   "main": "app.js",
   "dependencies": {
