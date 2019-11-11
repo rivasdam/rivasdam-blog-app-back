@@ -42,7 +42,7 @@ exports.reserveSeat = (req, res) => {
                 },
                 UpdateExpression: "set seats = :s",
                 ExpressionAttributeValues: {
-                    ":s": flightData.Item.seats - 1
+                    ":s": flightData.Item.seats + 1
                 },
                 ReturnValues: "UPDATED_NEW"
             };
